@@ -8,7 +8,7 @@ My task is to build the back end for an e-commerce site by modifying starter cod
 
 ## Table of contents
 
-- [About](#About)
+- [About](#about)
 - [Description](#description)
 - [Technologies](#technologies)
 - [Installation](#installation)
@@ -30,9 +30,36 @@ My task is to build the back end for an e-commerce site by modifying starter cod
 
 
 ## Installation
+- Clone the repo
+- Install node and the dependencies (mysql2, sequlize, dotenv,)
+- Configure the env file with you MYsql database credentials
 
 
 ## Usage
+
+to run the application 
+1. Access terminal 
+2. Enter npm install 
+3. Enter mysql -u root -p press enter 
+4. Enter password
+5. Source db/schema.sql;  
+6. then enter exit
+7. In the terminal enter Npm run seed
+8. Npm start
+9. Test the Api routes like in the walkthrough video.
+ 
+ 
+ - [Video walkthrough](https://drive.google.com/file/d/15EdoTyCSRRhscEGZr84isJsRbvlDaQgr/view) for reference.
+
+    ![Screenshot of App](ScrennshotOfRoutes.png)
+
+
+
+
+## About
+- [My-GitHub](https://github.com/JIF945)
+- [Email](mailto:joshua.james918@gmail.com) for any questions. 
+
 
 
 ## License
