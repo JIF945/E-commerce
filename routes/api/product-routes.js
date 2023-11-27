@@ -36,8 +36,6 @@ try {
 }
 });
 
-
-
 // create new product 
 router.post('/', async (req, res) => {
   try {
@@ -47,12 +45,10 @@ router.post('/', async (req, res) => {
     // Check if there are product tags
     if (req.body.tagIds && req.body.tagIds.length) {
       // Create an array of productTag objects
-      const productTagIdArr = req.body.tagIds.map((tag_id) => {
-        return {
-          product_id: product.id,
-          tag_id,
-        };
-      });
+      const productTagIdArr = req.body.tagIds.map((tag_id) => ({
+        product_id: product.id,
+        tag_id,
+      }));
 
       // Bulk create product tags in the ProductTag model
       await ProductTag.bulkCreate(productTagIdArr);
@@ -61,7 +57,7 @@ router.post('/', async (req, res) => {
     // Respond with the created product
     res.status(200).json(product);
   } catch (err) {
-    console.log(err);
+    console.error(err);
     res.status(400).json(err);
   }
 });
@@ -129,6 +125,5 @@ router.delete('/:id', async (req, res) => {
     res.status(400).json(err);
   }
 });
-
 
 module.exports = router;
