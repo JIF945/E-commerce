@@ -17,23 +17,22 @@ router.get('/', async (req, res) => {
   }
 });
 
-// get one product
 router.get('/:id', async (req, res) => {
   // find a single product by its `id`
-try {
-  const product = await Product.findByPk(req.params.id, {
-    include: [Category, Tag]
-  });
-  
-  if (!product) {
-    res.status(404).json({ message:'Product can not be found'});
-    return;
-  }
+  try {
+    const product = await Product.findByPk(req.params.id, {
+      include: [Category, Tag]
+    });
+    
+    if (!product) {
+      res.status(404).json({ message: 'Product cannot be found' });
+      return;
+    }
 
-  res.status.apply(200).json(product);
-} catch (err) {
-  res.status(500).json(err);
-}
+    res.status(200).json(product);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 // create new product 
